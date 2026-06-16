@@ -97,6 +97,40 @@ npm run build          # production build
 npm run fetch-data     # (where network is allowed) pull EXACT prices into series.json
 ```
 
+## Deploy to Vercel
+
+A standard Next.js 15 app — **zero config** on Vercel. The repo's default branch
+is already set, so importing it deploys that branch as production.
+
+1. Go to **[vercel.com/new](https://vercel.com/new)** and **Import**
+   `acenasir/chartle`.
+2. The framework preset auto-detects **Next.js**. Leave the defaults and
+   **Deploy**.
+3. (Optional) Add a custom domain under Project → Settings → Domains.
+
+No environment variables are required. Optional:
+
+- `NEXT_PUBLIC_SITE_URL` — your canonical URL, used for OG/share metadata
+  (defaults to `https://chartle.app`).
+
+### Exact prices in production
+
+The committed `series.json` is the *demo/approx* dataset. Vercel's build
+environment has open network, so to ship **exact** prices set the Vercel
+**Build Command** to:
+
+```
+npm run fetch-data && npm run build
+```
+
+`fetch-data` pulls daily closes from Stooq and falls back to the bundled data on
+any failure, so the build never breaks.
+
+> **Note:** deploying from a Claude-on-web container is not possible — its
+> network policy blocks `api.vercel.com`. Use the GitHub import above (Vercel
+> pulls straight from GitHub), or run `npx vercel --prod` from any machine with
+> open network.
+
 ## Project layout
 
 ```
