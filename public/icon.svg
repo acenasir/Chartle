@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Chartle">
+  <rect width="512" height="512" rx="112" fill="#0B0E11"/>
+  <g stroke="#1E252E" stroke-width="2">
+    <path d="M96 160H416M96 256H416M96 352H416"/>
+    <path d="M160 96V416M256 96V416M352 96V416"/>
+  </g>
+  <polyline points="80,360 176,250 248,300 432,128"
+    fill="none" stroke="#3FB950" stroke-width="22"
+    stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="432" cy="128" r="20" fill="#3FB950"/>
+</svg>
