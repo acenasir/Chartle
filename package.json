@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "description": "The daily markets puzzle — guess the anonymized chart, one a day.",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
